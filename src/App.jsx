@@ -1,11 +1,13 @@
 import "./App.css";
 
+const CV_PATH = "/Kalsang_Lama_CV_SDOC.pdf";
+
 const projects = [
   {
     number: "01",
     title: "SecureSign Enterprise",
     description:
-      "Developed an enterprise-oriented Public Key Infrastructure (PKI) platform for digital certificate management, document signing and verification, secure authentication, role-based access control, and audit logging. Built using FastAPI, React, PostgreSQL, Docker, and Nginx.",
+      "Developed an enterprise-oriented Public Key Infrastructure (PKI) platform for digital certificate management, document signing and verification, secure authentication, role-based access control, and audit logging. The platform uses FastAPI, React, PostgreSQL, Docker, and Nginx.",
     tech: [
       "Python",
       "FastAPI",
@@ -23,9 +25,26 @@ const projects = [
   },
   {
     number: "02",
+    title: "Advanced Malware Detection & Threat Intelligence",
+    description:
+      "Developed a Python-based static malware analysis application featuring suspicious file detection, risk scoring, IOC extraction, MITRE ATT&CK mapping, threat intelligence integration, and security reports. The system supports malware investigation through a graphical interface.",
+    tech: [
+      "Python",
+      "CustomTkinter",
+      "Malware Analysis",
+      "VirusTotal",
+      "MITRE ATT&CK",
+      "Threat Intelligence",
+    ],
+    type: "MALWARE ANALYSIS / THREAT DETECTION",
+    link:
+      "https://github.com/kalsanglama200/Malware-detection-and-analysis",
+  },
+  {
+    number: "03",
     title: "Digital Forensics & Incident Response",
     description:
-      "Performed forensic analysis on test subjects, identified digital artifacts, analyzed logs, and reconstructed security incidents.",
+      "Performed forensic analysis in controlled lab environments, identified digital artifacts, examined system logs, and reconstructed security incidents using digital investigation methodologies.",
     tech: [
       "Autopsy",
       "Wireshark",
@@ -33,34 +52,34 @@ const projects = [
       "Volatility",
       "NIST SP 800-86",
     ],
-    type: "CYBERSECURITY",
+    type: "DIGITAL FORENSICS",
   },
   {
-    number: "03",
+    number: "04",
     title: "Network Architecture Design",
     description:
-      "Designed a secure network architecture with segmentation, firewalls, access controls, VPN connectivity, redundancy, and intrusion prevention.",
+      "Designed a secure network architecture incorporating network segmentation, firewalls, access controls, VPN connectivity, redundancy, and intrusion prevention mechanisms.",
     tech: [
       "Cisco",
       "Networking",
       "VPN",
       "Firewalls",
-      "Security",
+      "Network Security",
     ],
     type: "NETWORK SECURITY",
   },
   {
-    number: "04",
+    number: "05",
     title: "Freelancing Platform",
     description:
-      "Built a full-stack freelancing platform featuring user authentication, project posting, and interactive functionality.",
+      "Built a full-stack freelancing platform featuring user authentication, project posting, and interactive web application functionality.",
     tech: [
       "React",
       "Node.js",
       "JavaScript",
       "HTML/CSS",
     ],
-    type: "FULL STACK",
+    type: "FULL STACK DEVELOPMENT",
     link: "https://github.com/kalsanglama200/Web_Coursework",
   },
 ];
@@ -70,22 +89,24 @@ const skills = [
     title: "Defensive Security",
     items: [
       "Digital Forensics",
+      "Incident Response",
       "Autopsy",
       "FTK",
       "Volatility",
       "Wireshark",
       "Log Analysis",
-      "Incident Response",
+      "Malware Analysis",
     ],
   },
   {
     title: "Offensive Security",
     items: [
       "Web Exploitation",
+      "Penetration Testing",
+      "Vulnerability Assessment",
       "Reverse Engineering",
       "Ghidra",
       "Network Analysis",
-      "Vulnerability Assessment",
     ],
   },
   {
@@ -93,10 +114,11 @@ const skills = [
     items: [
       "Linux Administration",
       "Docker",
-      "Cisco Packet Tracer",
-      "Networking",
-      "PostgreSQL",
       "Nginx",
+      "PostgreSQL",
+      "Networking",
+      "Cisco Packet Tracer",
+      "Virtualization",
     ],
   },
   {
@@ -104,6 +126,7 @@ const skills = [
     items: [
       "Python",
       "Shell",
+      "Bash",
       "C",
       "JavaScript",
       "PHP",
@@ -121,7 +144,9 @@ const skills = [
       "Digital Signatures",
       "JWT Authentication",
       "Role-Based Access Control",
-      "Secure Development",
+      "Secure Coding",
+      "SHA-256",
+      "RSA",
     ],
   },
 ];
@@ -183,9 +208,11 @@ function App() {
             <p className="heroDescription">
               BSc (Hons) Ethical Hacking and Cyber Security student
               passionate about digital forensics, penetration testing,
-              network security, cryptography, and building secure
-              applications.
+              network security, cryptography, malware analysis,
+              and developing secure applications.
             </p>
+
+            {/* HERO BUTTONS */}
 
             <div className="heroButtons">
 
@@ -193,21 +220,31 @@ function App() {
                 href="#projects"
                 className="primaryButton"
               >
-                View my work ↓
+                View My Work ↓
               </a>
 
               <a
-                href="#contact"
+                href={CV_PATH}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="secondaryButton"
               >
-                Contact me
+                📄 View CV
+              </a>
+
+              <a
+                href={CV_PATH}
+                download="Kalsang_Lama_CV.pdf"
+                className="secondaryButton"
+              >
+                ↓ Download CV
               </a>
 
             </div>
 
           </div>
 
-          {/* TERMINAL */}
+          {/* TERMINAL CARD */}
 
           <div className="terminalCard">
 
@@ -244,6 +281,8 @@ function App() {
                 Penetration Testing
                 <br />
                 Network Security
+                <br />
+                Malware Analysis
                 <br />
                 Cryptography & PKI
                 <br />
@@ -283,24 +322,23 @@ function App() {
           <div className="aboutText">
 
             <p>
-              I'm currently pursuing a BSc (Hons) in Ethical Hacking
-              and Cyber Security at Softwarica College of IT and
-              E-Commerce in Kathmandu.
+              I'm currently pursuing a BSc (Hons) in Ethical
+              Hacking and Cyber Security at Softwarica College
+              of IT and E-Commerce in Kathmandu.
             </p>
 
             <p>
-              My interests span both offensive and defensive security.
-              I enjoy investigating systems, understanding how attacks
-              work, designing secure networks, and developing practical
-              software solutions.
+              My interests span both offensive and defensive
+              security. I enjoy investigating systems,
+              understanding how attacks work, designing secure
+              networks, and developing practical software solutions.
             </p>
 
             <p>
               My technical projects include SecureSign Enterprise,
-              a PKI-based digital signature and certificate management
-              platform, alongside practical cybersecurity labs involving
-              digital forensics, reverse engineering, and network
-              security.
+              a PKI-based document signing and certificate management
+              platform, and an Advanced Malware Detection system
+              focused on security analysis and threat intelligence.
             </p>
 
             <div className="stats">
@@ -312,7 +350,7 @@ function App() {
 
               <div>
                 <strong>2027</strong>
-                <span>Graduation</span>
+                <span>Expected Graduation</span>
               </div>
 
               <div>
@@ -358,11 +396,9 @@ function App() {
                 <div className="tags">
 
                   {skill.items.map((item) => (
-
                     <span key={item}>
                       {item}
                     </span>
-
                   ))}
 
                 </div>
@@ -419,11 +455,9 @@ function App() {
                   <div className="tags">
 
                     {project.tech.map((item) => (
-
                       <span key={item}>
                         {item}
                       </span>
-
                     ))}
 
                   </div>
@@ -485,9 +519,11 @@ function App() {
                 </h4>
 
                 <p>
-                  Practical Pen-Testing, Platforms & Operating
-                  Systems, Computer Systems & Networks,
-                  and Digital Forensics.
+                  Expected graduation: 2027.
+                  Relevant modules include Practical Pen-Testing,
+                  Platforms & Operating Systems,
+                  Computer Systems & Networks, and
+                  Digital Forensics.
                 </p>
 
               </div>
@@ -627,9 +663,9 @@ function App() {
           </h2>
 
           <p className="contactDescription">
-            Interested in cybersecurity, development, CTFs,
-            cryptography, or collaborating on a project?
-            Feel free to get in touch.
+            Interested in cybersecurity, development,
+            digital forensics, cryptography, or collaborating
+            on a project? Feel free to get in touch.
           </p>
 
           <a
@@ -638,6 +674,29 @@ function App() {
           >
             kalsanglama200@gmail.com ↗
           </a>
+
+          {/* CV BUTTONS IN CONTACT SECTION */}
+
+          <div className="heroButtons">
+
+            <a
+              href={CV_PATH}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="secondaryButton"
+            >
+              View CV ↗
+            </a>
+
+            <a
+              href={CV_PATH}
+              download="Kalsang_Lama_CV.pdf"
+              className="secondaryButton"
+            >
+              ↓ Download CV
+            </a>
+
+          </div>
 
           <div className="socialLinks">
 
